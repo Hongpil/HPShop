@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorDarkGray2">#28292C</color>
+    <color name="colorDarkGray3">#4A4A4A</color>
+    <color name="colorBlack">#000000</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGreen">#00d3a1</color>
+    <color name="CircleColor">#01579b</color>
+    <color name="navdrawer_color">#2A2E43</color>
+    <color name="yellow">#F1D617</color>
+    <color name="navy">#021430</color>
+    <color name="bg_normal">#f7f7f7</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="black_a">#5C000000</color>
+    <color name="black_a2">#8B000000</color>
+    <color name="gray">#dcdcde</color>
+    <color name="gray2">#898c97</color>
+    <color name="lose">#ff59b2</color>
+    <color name="btn_start_nor">#00d3a1</color>
+    <color name="btn_start_sel">#00a4ff</color>
+</resources>

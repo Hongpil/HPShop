@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--최상위 레이아웃. DrawerLayout-->
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/product_drawerLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!--메인 레이아웃-->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/activity_product_main_body" />
+
+    <!--자식 레이아웃. Navigation Drawer-->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/product_navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/activity_product_main_nav_header"
+        app:menu="@menu/menu_nav_body">
+
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

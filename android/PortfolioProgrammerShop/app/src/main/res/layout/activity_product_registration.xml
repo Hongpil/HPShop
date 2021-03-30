@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".product.registration.ProductRegistrationActivity">
+
+    <data>
+        <variable
+            name="xmlViewModel"
+            type="com.philip.portfolioprogrammershop.product.registration.ProductRegistrationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/product_registration_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- ScrollView 태그는 자식 태그를 한 개만 소유할 수 있기 때문에, 하위 layout 태그와 함께 사용한다. -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/product_registration_toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="20dp"
+                android:orientation="vertical">
+
+                <!--
+                ImageView 에도 DataBinding 적용해볼 것
+                참고 :
+                https://gus0000123.medium.com/android-jetpack-databinding-%EC%82%AC%EC%9A%A9%EB%B2%95-2-%ED%99%9C%EC%9A%A9%ED%8E%B8-de0343cced26
+                -->
+                <ImageView
+                    android:id="@+id/img_product_register"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_file_upload"
+                    android:background="#ECEBEB"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="8dp"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="onClick"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="상품명 및 설명"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="40dp"/>
+
+
+                <!--
+                [TextInputLayout & TextInputEditText]
+                TextInputLayout은 TextInputEditText에 입력된 텍스트에 반응하는 레이아웃입니다.
+                EditText의 상위 버전이라고 할 수 있습니다.
+                [Reference]
+                https://prince-mint.tistory.com/7
+                -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <!--
+                     * 중요한 개념 *
+                     EditText에 값을 적용하는 방법은 TextView와 동일합니다.
+                     다만 TextView에서는 android:text="@{vm.message}였고 EditText에서는android:text="@={vm.message}"으로 @옆에=을 추가해 줍니다.
+                     추가 이유는 EditText에 입력 받은 값을 바로 message 데이터에 적용해주기 때문입니다.
+                     [Reference]
+                     - https://steemit.com/kr/@jeonghamin/andoird-5-mvvm-edittext
+                    -->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={xmlViewModel.productName}"
+                        android:onTextChanged="@{xmlViewModel.onNameTextChanged}"
+                        android:hint="상품명"
+                        android:singleLine="true"
+                        android:maxLength="40" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{xmlViewModel.productNameLength}"
+                    tools:text="0/40"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="4dp"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={xmlViewModel.description}"
+                        android:onTextChanged="@{xmlViewModel.onDescriptionTextChanged}"
+                        android:hint="상품 설명"
+                        android:maxLength="500"
+                        android:maxLines="6"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{xmlViewModel.descriptionLength}"
+                    tools:text="0/500"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="카테고리"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="40dp"/>
+
+
+                <!--
+                정리할 것
+                https://www.python2.net/questions-355587.htm
+                -->
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner_Test"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="#ECEBEB"
+                    android:entries="@{xmlViewModel.categories}"
+                    tools:setOnItemSelectedListener="@{xmlViewModel.clickCategoryListener}"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="판매 가격"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="40dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={xmlViewModel.price}"
+                        android:hint="Ex) 1000"
+                        android:singleLine="true"
+                        android:maxLength="500"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btn_registration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="상품등록"
+                    android:textColor="#FFFFFF"
+                    android:background="@color/colorPrimary"
+                    android:onClick="onClick"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleLarge"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

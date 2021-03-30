@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">PortfolioProgrammerShop</string>
+
+
+    <string name="error">알 수 없는 오류가 발생했습니다</string>
+    <string name="email_error">이메일 형식이 정확하지 않습니다.</string>
+    <string name="password_error">비밀번호는 8자 이상 20자 이하로 입력해주세요.</string>
+    <string name="name_error">이름은 2자 이상 20자 이하로 입력해주세요.</string>
+    <string name="signup_success">회원 가입이 되었습니다. 로그인 후 이용해주세요.</string>
+    <string name="signin_success">로그인되었습니다.</string>
+    <string name="signin_failed">로그인 정보를 확인해주세요.</string>
+    <string name="api_error">상품 정보를 가져오는 중 오류가 발생했습니다.</string>
+
+    <string name="open_drawer_description">open drawer</string>
+    <string name="close_drawer_description">close drawer</string>
+    <string name="navInquiry">내 문의</string>
+    <string name="navSignout">로그아웃</string>
+    <string name="search_title">Search</string>
+    <string name="product_not_search">검색된 상품이 없습니다.</string>
+    <string name="product_list_fragment_not_search">상품이 없습니다.</string>
+    <string name="email_overlap">이미 사용 중인 이메일입니다.</string>
+    <string name="email_sending_success">이메일로 전송된 링크를 클릭해주세요.</string>
+    <string name="email_auth_not_yet">이메일 인증 미완료. 메일로 전송된 링크를 클릭해주세요.</string>
+    <string name="signin_no_user">등록되지 않은 이메일입니다.</string>
+</resources>

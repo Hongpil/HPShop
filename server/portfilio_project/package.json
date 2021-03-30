@@ -1,0 +1,18 @@
+{
+  "name": "portfilio_project",
+  "version": "1.0.0",
+  "description": "Simple single file REST-API using: - [ExpressJS](https://expressjs.com) For basic routing handler - [Sequelize](http://docs.sequelizejs.com) for Databases (MySQL) ORM - [body-parser](https://github.com/expressjs/body-parser) for HTTP POST method handler - [multer](https://github.com/expressjs/multer) for multipart-form and file upload handling - MySQL database --- ### Install Make sure you have installed [NodeJS](https://nodejs.org/) and MySQL server on your local machine.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "mysql2": "^2.2.5",
+    "nodemailer": "^6.5.0",
+    "nodemailer-smtp-pool": "^2.8.3"
+  }
+}

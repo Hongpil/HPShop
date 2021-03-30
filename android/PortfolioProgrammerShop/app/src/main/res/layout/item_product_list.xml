@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/img_product_list"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/txt_product_list_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="한 번도 안 입은 여성 의류 판매합니다 ~!"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="@+id/img_product_list"
+        app:layout_constraintStart_toEndOf="@+id/img_product_list"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/txt_product_list_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="W10,000"
+        android:textSize="14sp"
+        android:textColor="@color/colorAccent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt_product_list_title"
+        app:layout_constraintStart_toEndOf="@+id/img_product_list"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

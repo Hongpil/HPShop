@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/product_layout_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:contentInsetLeft="0dp"
+                android:contentInsetStart="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp">
+
+                <!-- dummy to catch focus -->
+                <LinearLayout
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="0px"
+                    android:layout_height="0px"/>
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/product_searchView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    app:queryHint="@string/search_title" />
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_product_list"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_product_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_product_list_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/product_list_fragment_not_search"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_gravity="center"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_floatingAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_add"
+        android:layout_margin="16dp"/>
+</FrameLayout>
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <com.google.android.material.appbar.AppBarLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--            <androidx.appcompat.widget.Toolbar-->
+<!--                android:id="@+id/product_layout_toolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="?attr/actionBarSize"-->
+<!--                android:background="?attr/colorPrimary"-->
+<!--                android:contentInsetLeft="0dp"-->
+<!--                android:contentInsetStart="0dp"-->
+<!--                app:contentInsetLeft="0dp"-->
+<!--                app:contentInsetStart="0dp">-->
+
+<!--                &lt;!&ndash; dummy to catch focus &ndash;&gt;-->
+<!--                <LinearLayout-->
+<!--                    android:focusable="true"-->
+<!--                    android:focusableInTouchMode="true"-->
+<!--                    android:layout_width="0px"-->
+<!--                    android:layout_height="0px"/>-->
+
+<!--                <androidx.appcompat.widget.SearchView-->
+<!--                    android:id="@+id/product_searchView"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="end"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    app:queryHint="@string/search_title" />-->
+<!--            </androidx.appcompat.widget.Toolbar>-->
+
+<!--        </com.google.android.material.appbar.AppBarLayout>-->
+
+<!--        &lt;!&ndash; 메인 view &ndash;&gt;-->
+<!--        &lt;!&ndash; 탭 메뉴가 많을 시에는 화면에서 글자가 잘린다. 이럴 땐 아래와 같이 app:tabMode="scrollable" 속성을 추가하면 된다. &ndash;&gt;-->
+<!--        &lt;!&ndash; 반면, 탭 메뉴가 많지 않을 시엔 app:tabMode="scrollable" 속성을 추가하면 안 된다. 글자 폭만큼만 탭 영역이 차지하기 때문에 부자연스럽기 때문. &ndash;&gt;-->
+<!--        <com.google.android.material.tabs.TabLayout-->
+<!--            android:id="@+id/product_tabLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:tabMode="scrollable"-->
+<!--            android:background="#ffffff" />-->
+
+<!--        <androidx.viewpager.widget.ViewPager-->
+<!--            android:id="@+id/product_viewPager"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent" />-->
+<!--    </LinearLayout>-->
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/btn_floatingAction"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="end|bottom"-->
+<!--        android:src="@drawable/ic_add"-->
+<!--        android:layout_margin="16dp"/>-->
+<!--</FrameLayout>-->

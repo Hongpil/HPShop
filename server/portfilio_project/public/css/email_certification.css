@@ -1,0 +1,6 @@
+body{display: flex; justify-content: center; height:90vh;align-items: center;}
+.wrap{display:flex; flex-direction: column; justify-content:center; }
+.email_certification {display: flex; justify-content: center;}
+img {width:60%}
+h1{font-weight: 600; font-size:3vw; line-height: 1.3vw; text-align: center;}
+h2{font-size: 3vw; text-align: center; line-height: 10vw;}
