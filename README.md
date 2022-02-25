@@ -1,5 +1,5 @@
 # Programmer Shop
-안드로이드 기반 **Kotlin MVVM패턴으로 REST API**를 활용한 쇼핑몰 어플입니다.
+안드로이드 기반 Kotlin MVVM패턴으로 REST API를 활용한 쇼핑몰 어플입니다.
 
 ---
 ## 스크린샷
